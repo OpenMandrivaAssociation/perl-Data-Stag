@@ -16,7 +16,6 @@ Buildrequires:	perl-devel
 %endif
 Buildrequires:  perl-IO-String
 Buildarch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 This module is for manipulating data as recursively nested tag/value
