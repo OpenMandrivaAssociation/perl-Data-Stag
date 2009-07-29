@@ -1,22 +1,22 @@
-%define module	Data-Stag
-%define name	perl-%{module}
-%define version 0.11
-%define release %mkrel 2
+%define upstream_name	 Data-Stag
+%define upstream_version 0.11
 
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
-Summary:	%{module} module for perl
-License:	GPL or Artistic
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
+Summary:	%{upstream_name} module for perl
+License:	GPL+ or Artistic
 Group:		Development/Perl
-Source:		http://search.cpan.org/CPAN/authors/id/C/CM/CMUNGALL/%{module}-%{version}.tar.bz2
-Url:		http://search.cpan.org/dist/%{module}/
+Url:		http://search.cpan.org/dist/%{upstream_name}/
+Source0:	http://search.cpan.org/CPAN/authors/id/C/CM/CMUNGALL/%{upstream_name}-%{upstream_version}.tar.bz2
+
 %if %{mdkversion} < 1010
 Buildrequires:	perl-devel
 %endif
 Buildrequires:  perl-IO-String
 Buildarch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 This module is for manipulating data as recursively nested tag/value
@@ -25,7 +25,7 @@ can be represented as nested arrays, which have the advantage of being
 native to perl.
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -47,4 +47,3 @@ rm -rf %{buildroot}
 %{_bindir}/*
 %{perl_vendorlib}/Data
 %{_mandir}/*/*
-
