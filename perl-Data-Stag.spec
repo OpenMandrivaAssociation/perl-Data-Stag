@@ -1,5 +1,5 @@
 %define upstream_name	 Data-Stag
-%define upstream_version 0.13
+%define upstream_version 0.14
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
@@ -9,7 +9,7 @@ Summary:	%{upstream_name} module for perl
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}/
-Source0:	http://www.cpan.org/authors/id/C/CM/CMUNGALL/Data-Stag-%{upstream_version}.tar.gz
+Source0:	http://search.cpan.org/CPAN/authors/id/C/CM/CMUNGALL/Data-Stag-%{upstream_version}.tar.gz
 
 BuildRequires:	perl-devel
 BuildRequires:	perl-IO-String
@@ -108,5 +108,6 @@ make test
 
 * Wed Feb 25 2004 Guillaume Rousse <guillomovitch@mandrake.org> 0.03-2mdk
 - fixed dir ownership (distlint)
+
 
 
