@@ -1,15 +1,13 @@
 %define upstream_name	 Data-Stag
-%define upstream_version 0.14
-
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	3
+Version:	0.14
+Release:	4
 
 Summary:	%{upstream_name} module for perl
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}/
-Source0:	http://search.cpan.org/CPAN/authors/id/C/CM/CMUNGALL/Data-Stag-%{upstream_version}.tar.gz
+Url:		https://metacpan.org/dist/%{upstream_name}/
+Source0:	http://search.cpan.org/CPAN/authors/id/C/CM/CMUNGALL/Data-Stag-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -23,7 +21,7 @@ can be represented as nested arrays, which have the advantage of being
 native to perl.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -49,9 +47,7 @@ make test
 
 * Wed Jul 29 2009 JÃ©rÃ´me Quelin <jquelin@mandriva.org> 0.110.0-1mdv2011.0
 + Revision: 403085
-- rebuild using %%perl_convert_version
-
-* Fri Aug 08 2008 Thierry Vignaud <tv@mandriva.org> 0.11-2mdv2009.0
+- rebuild using %0.14 Fri Aug 08 2008 Thierry Vignaud <tv@mandriva.org> 0.11-2mdv2009.0
 + Revision: 268410
 - rebuild early 2009.0 package (before pixel changes)
 
